@@ -42,19 +42,18 @@ dependencies {
 
     common(project(path: ':common', configuration: 'namedElements')) { transitive false }
     shadowBundle project(path: ':common', configuration: 'transformProductionForge')
-    modImplementation ("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false }
-    modImplementation ("com.jozufozu.flywheel:flywheel-forge-${flywheel_minecraft_version}:${flywheel_forge_version}")
+    modImplementation ("com.simibubi.create:create-${minecraft_version}:${create_forge_version}:slim") { transitive = false }
+    modImplementation("net.createmod.ponder:Ponder-Forge-${minecraft_version}:${ponder_forge_version}")
+    modCompileOnly("dev.engine-room.flywheel:flywheel-forge-api-${minecraft_version}:${flywheel_forge_version}")
+    modRuntimeOnly("dev.engine-room.flywheel:flywheel-forge-${minecraft_version}:${flywheel_forge_version}")
     modImplementation ("com.tterrag.registrate:Registrate:${registrate_version}")
+    compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.4.1"))
+    implementation("io.github.llamalad7:mixinextras-forge:0.4.1")
     modImplementation "curse.maven:dynamiclights-reforged-551736:${dynamiclights_curseforge_id}"
-
     forgeRuntimeLibrary ('org.anarres:jcpp:1.4.14')
-    modLocalRuntime ("org.embeddedt:embeddium-${minecraft_version}:${embeddium_version}+mc${minecraft_version}")
+    modLocalRuntime ("maven.modrinth:embeddium:${embeddium_version}+mc${minecraft_version}")
     modLocalRuntime ("maven.modrinth:oculus:${oculus_version}")
-    modLocalRuntime ("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false }
-
-//    modLocalRuntime("maven.modrinth:create-contraption-terminals:1.20.1-1.0.0")
-//    modLocalRuntime("maven.modrinth:toms-storage:1.20-1.6.8")
-    //modLocalRuntime ("com.simibubi.create:create-${create_minecraft_version}:${create_version}:slim")
+    modLocalRuntime ("com.simibubi.create:create-${minecraft_version}:${create_forge_version}:slim") { transitive = false }
 }
 
 processResources {

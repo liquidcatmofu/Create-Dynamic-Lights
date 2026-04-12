@@ -33,17 +33,21 @@ dependencies {
     common(project(path: ':common', configuration: 'namedElements')) { transitive false }
     shadowBundle project(path: ':common', configuration: 'transformProductionFabric')
 
-    modImplementation ("com.simibubi.create:create-fabric-${minecraft_version}:${create_fabric_version}")
+    modImplementation ("com.simibubi.create:create-fabric:${create_fabric_version}")
     modImplementation ("dev.lambdaurora:lambdynamiclights:${lambdynamiclights_version}")
+//    modImplementation "curse.maven:lambdynamiclights-393442:7010532"
+//    modImplementation "curse.maven:dynamiclights-reforged-551736:6044480"
     modCompileOnly("dev.lambdaurora:spruceui:${spruceui_version}")
     modImplementation ("com.terraformersmc:modmenu:${modmenu_version}")
     modImplementation ("fuzs.forgeconfigapiport:forgeconfigapiport-fabric:${forgeconfigapiport_fabric_version}")
 
     localRuntime ('org.anarres:jcpp:1.4.14')
     localRuntime ('io.github.douira:glsl-transformer:2.0.0-pre14')
-    modLocalRuntime ("maven.modrinth:sodium:mc1.20.1-0.5.11")
-    modLocalRuntime ("maven.modrinth:iris:1.7.2+1.20.1")
-    modLocalRuntime ("maven.modrinth:iris-flw-compat:fabric-1.20.1-1.1.0")
+    modLocalRuntime ("maven.modrinth:sodium:mc${minecraft_version}-${sodium_version}-fabric")
+    modLocalRuntime ("maven.modrinth:indium:${indium_version}+mc${minecraft_version}")
+    modLocalRuntime ("maven.modrinth:iris:${iris_version}+${minecraft_version}")
+    // Not compatible with Create 6
+//    modLocalRuntime ("maven.modrinth:iris-flw-compat:fabric-1.20.1-1.1.0")
 }
 
 processResources {
@@ -61,4 +65,17 @@ shadowJar {
 
 remapJar {
     input.set shadowJar.archiveFile
+}
+
+configurations.all {
+    // Sodium requires LWJGL 3.3.1
+    resolutionStrategy {
+        force 'org.lwjgl:lwjgl:3.3.1'
+        force 'org.lwjgl:lwjgl-jemalloc:3.3.1'
+        force 'org.lwjgl:lwjgl-openal:3.3.1'
+        force 'org.lwjgl:lwjgl-opengl:3.3.1'
+        force 'org.lwjgl:lwjgl-glfw:3.3.1'
+        force 'org.lwjgl:lwjgl-stb:3.3.1'
+        force 'org.lwjgl:lwjgl-tinyfd:3.3.1'
+    }
 }
