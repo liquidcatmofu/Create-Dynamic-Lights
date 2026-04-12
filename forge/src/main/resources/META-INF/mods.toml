@@ -29,7 +29,7 @@ displayTest="IGNORE_ALL_VERSION"
 [[dependencies.createdynlight]]
     modId="create"
     mandatory=true
-    versionRange="[0.5.0,)"
+    versionRange="[6.0.0,6.1.0)"
     ordering="AFTER"
     side="BOTH"
 

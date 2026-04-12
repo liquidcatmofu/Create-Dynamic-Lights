@@ -1,28 +1,29 @@
 package top.leonx.dynlight;
 
-import com.simibubi.create.AllMovementBehaviours;
-import com.simibubi.create.content.contraptions.behaviour.MovementBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
+import com.simibubi.create.api.behaviour.movement.MovementBehaviour;
+import com.simibubi.create.api.registry.SimpleRegistry;
+import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
-public class LightBehaviourProvider implements AllMovementBehaviours.BehaviourProvider {
+public class LightBehaviourProvider implements SimpleRegistry.Provider<Block, MovementBehaviour>
+{
 
-    List<LightMovementBehaviour> lightMovementBehaviours = new ArrayList<>(15);
-
-    public LightBehaviourProvider() {
-        for (int i = 0; i < 15; i++) {
-            lightMovementBehaviours.add(new LightMovementBehaviour(i + 1));
-        }
-    }
+    Map<Integer, LightMovementBehaviour> lightMovementBehaviours = new HashMap<>(15);
 
     @Override
-    public @Nullable MovementBehaviour getBehaviour(BlockState blockState) {
-        int lightEmission = blockState.getLightEmission();
+    public @Nullable MovementBehaviour get(Block block) {
+        int lightEmission = block.defaultBlockState().getLightEmission();
         if (lightEmission <= 0) return null;
-        var index = Math.min(15, lightEmission) - 1;
+        var index = Math.min(15, lightEmission);
         return lightMovementBehaviours.get(index);
+    }
+
+    public LightBehaviourProvider() {
+        for (int i = 1; i <= 15; i++) {
+            lightMovementBehaviours.put(i, new LightMovementBehaviour(i + 1));
+        }
     }
 }

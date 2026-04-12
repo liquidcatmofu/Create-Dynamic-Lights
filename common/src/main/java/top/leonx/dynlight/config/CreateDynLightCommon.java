@@ -1,11 +1,12 @@
 package top.leonx.dynlight.config;
 
-import com.simibubi.create.foundation.config.ConfigBase;
+import net.createmod.catnip.config.ConfigBase;
+import org.jetbrains.annotations.NotNull;
 
 public class CreateDynLightCommon extends ConfigBase {
 
     @Override
-    public String getName() {
+    public @NotNull String getName() {
         return "dynamic light common";
     }
 

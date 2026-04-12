@@ -1,12 +1,13 @@
 package top.leonx.dynlight.config;
 
-import com.simibubi.create.foundation.config.ConfigBase;
+import net.createmod.catnip.config.ConfigBase;
+import org.jetbrains.annotations.NotNull;
 import top.leonx.dynlight.lamb.LambDynLightsDelegate;
 
 public class CreateDynLightClient extends ConfigBase {
 
     @Override
-    public String getName() {
+    public @NotNull String getName() {
         return "dynamic light client";
     }
 

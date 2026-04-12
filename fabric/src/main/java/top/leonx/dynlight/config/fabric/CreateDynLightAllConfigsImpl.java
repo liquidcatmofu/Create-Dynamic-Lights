@@ -1,6 +1,6 @@
 package top.leonx.dynlight.config.fabric;
 
-import com.simibubi.create.foundation.config.ConfigBase;
+import net.createmod.catnip.config.ConfigBase;
 import fuzs.forgeconfigapiport.api.config.v2.ForgeConfigRegistry;
 import fuzs.forgeconfigapiport.api.config.v2.ModConfigEvents;
 import net.minecraftforge.common.ForgeConfigSpec;
