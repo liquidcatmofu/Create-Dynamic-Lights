@@ -30,6 +30,6 @@
     "create": ">=6.0.0"
   },
   "suggests": {
-    "lambdynlights" : "*"
+    "sodiumdynamiclights" : ">=1.0.0"
   }
 }

@@ -1,7 +1,6 @@
 package top.leonx.dynlight.lamb;
 
 import com.simibubi.create.content.contraptions.AbstractContraptionEntity;
-//import com.simibubi.create.foundation.utility.VecHelper;
 import net.createmod.catnip.math.VecHelper;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import net.minecraft.client.Minecraft;
@@ -76,7 +75,7 @@ public abstract class CreateDynLightSource {
     }
 
 
-    public Level getDynamicLightWorld() {
+    public Level getDynamicLightLevel() {
         return contraptionEntity.level();
     }
 

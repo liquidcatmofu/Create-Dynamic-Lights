@@ -7,8 +7,8 @@ import top.leonx.dynlight.fabric.LambModEventHandler;
 public final class CreateDynLightFabricClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        // If there is LambDynamicLights, register the event handler
-        if (FabricLoader.getInstance().isModLoaded("lambdynlights")) {
+        // If there is SodiumDynamicLights, register the event handler
+        if (FabricLoader.getInstance().isModLoaded("sodiumdynamiclights")) {
             LambModEventHandler.register();
         }
     }

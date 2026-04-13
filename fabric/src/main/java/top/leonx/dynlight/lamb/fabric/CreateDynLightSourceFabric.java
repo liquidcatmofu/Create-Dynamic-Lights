@@ -1,7 +1,7 @@
 package top.leonx.dynlight.lamb.fabric;
 
 import com.simibubi.create.content.contraptions.AbstractContraptionEntity;
-import dev.lambdaurora.lambdynlights.DynamicLightSource;
+import toni.sodiumdynamiclights.DynamicLightSource;
 import net.minecraft.client.renderer.LevelRenderer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
@@ -14,52 +14,52 @@ public class CreateDynLightSourceFabric extends CreateDynLightSource implements 
     }
 
     @Override
-    public double getDynamicLightX() {
+    public double sdl$getDynamicLightX() {
         return super.getDynamicLightX();
     }
 
     @Override
-    public double getDynamicLightY() {
+    public double sdl$getDynamicLightY() {
         return super.getDynamicLightY();
     }
 
     @Override
-    public double getDynamicLightZ() {
+    public double sdl$getDynamicLightZ() {
         return super.getDynamicLightZ();
     }
 
     @Override
-    public Level getDynamicLightWorld() {
-        return super.getDynamicLightWorld();
+    public Level sdl$getDynamicLightLevel() {
+        return super.getDynamicLightLevel();
     }
 
     @Override
-    public void resetDynamicLight() {
+    public void sdl$resetDynamicLight() {
         super.resetDynamicLight();
     }
 
     @Override
-    public int getLuminance() {
+    public int sdl$getLuminance() {
         return super.getLuminance();
     }
 
     @Override
-    public void dynamicLightTick() {
+    public void sdl$dynamicLightTick() {
         super.dynamicLightTick();
     }
 
     @Override
-    public boolean shouldUpdateDynamicLight() {
+    public boolean sdl$shouldUpdateDynamicLight() {
         return super.shouldUpdateDynamicLight();
     }
 
     @Override
-    public boolean lambdynlights$updateDynamicLight(@NotNull LevelRenderer levelRenderer) {
+    public boolean sodiumdynamiclights$updateDynamicLight(@NotNull LevelRenderer levelRenderer) {
         return super.lambdynlights$updateDynamicLight(levelRenderer);
     }
 
     @Override
-    public void lambdynlights$scheduleTrackedChunksRebuild(@NotNull LevelRenderer levelRenderer) {
+    public void sodiumdynamiclights$scheduleTrackedChunksRebuild(@NotNull LevelRenderer levelRenderer) {
         super.lambdynlights$scheduleTrackedChunksRebuild(levelRenderer);
     }
 }

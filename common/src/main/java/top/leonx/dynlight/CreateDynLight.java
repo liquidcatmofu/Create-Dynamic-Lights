@@ -25,7 +25,6 @@ public class CreateDynLight {
         LOGGER.info("Registering DynLightMovementBehaviours to REGISTRY");
         blocks.forEach(block -> {
             var lightEmission = block.defaultBlockState().getLightEmission();
-            // すでに登録済みでないか確認してから登録
             if (MovementBehaviour.REGISTRY.get(block) == null) {
                 MovementBehaviour.REGISTRY.register(block, new LightMovementBehaviour(lightEmission));
             }

@@ -8,6 +8,6 @@ public final class CreateDynLightFabric implements ModInitializer {
     @Override
     public void onInitialize() {
         CreateDynLightAllConfigsImpl.register();
-        CreateDynLight.registerGlobalBehaviourProvider();
+        CreateDynLight.init();
     }
 }

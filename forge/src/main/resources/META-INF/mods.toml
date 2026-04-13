@@ -34,8 +34,8 @@ displayTest="IGNORE_ALL_VERSION"
     side="BOTH"
 
 [[dependencies.createdynlight]]
-    modId="dynamiclightsreforged"
+    modId="sodiumdynamiclights"
     mandatory=false
-    versionRange="[1.6.0,)"
+    versionRange="[1.0.0,1.1.0)"
     ordering="AFTER"
     side="CLIENT"

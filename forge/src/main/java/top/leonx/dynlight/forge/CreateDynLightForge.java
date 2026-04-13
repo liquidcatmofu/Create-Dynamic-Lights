@@ -32,7 +32,7 @@ public final class CreateDynLightForge {
     private void setup(FMLClientSetupEvent t) {
         CreateDynLight.LOGGER.info("CreateDynLight Initialized");
 
-        if (ModList.get().isLoaded("dynamiclightsreforged")) {
+        if (ModList.get().isLoaded("sodiumdynamiclights")) {
             t.enqueueWork(()->{
                 var forgeEventBus = MinecraftForge.EVENT_BUS;
                 forgeEventBus.addListener(LambModEventHandler::onEntityJoinWorld);
@@ -43,7 +43,7 @@ public final class CreateDynLightForge {
     }
 
     private void commonSetup(FMLCommonSetupEvent evt){
-        evt.enqueueWork(CreateDynLight::registerGlobalBehaviourProvider);
+        evt.enqueueWork(CreateDynLight::init);
     }
 
     private void modInit(FMLLoadCompleteEvent evt){
