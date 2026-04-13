@@ -26,15 +26,26 @@ subprojects {
     repositories {
         maven { url = "https://maven.parchmentmc.org" }
 
-        maven {
-            name = "Modrinth"
-            url = "https://api.modrinth.com/maven"
-            content {
+        exclusiveContent {
+            forRepository {
+                maven {
+                    name = "Modrinth"
+                    url = "https://api.modrinth.com/maven"
+                }
+            }
+            filter {
                 includeGroup "maven.modrinth"
             }
         }
-        maven {
-            url "https://cursemaven.com"
+        exclusiveContent {
+            forRepository {
+                maven {
+                    url "https://cursemaven.com"
+                }
+            }
+            filter {
+                includeGroup "curse.maven"
+            }
         }
         maven {
             url "https://maven.tterrag.com/"
@@ -83,12 +94,10 @@ subprojects {
             name 'Gegy'
             url 'https://maven.gegy.dev'
         }
+        maven { url = "https://maven.createmod.net" } // Create, Ponder, Flywheel
+        maven { url = "https://maven.ithundxr.dev/mirror" } // Registrate
+        maven { url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/" } // ForgeConfigAPIPort
 
-        repositories {
-            maven { url = "https://maven.createmod.net" } // Create, Ponder, Flywheel
-            maven { url = "https://maven.ithundxr.dev/mirror" } // Registrate
-            maven { url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/" } // ForgeConfigAPIPort
-        }
     }
 
     loom {
